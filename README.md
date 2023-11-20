@@ -1,4 +1,4 @@
-# Thread-Library
+# Cooperative Multitasking Thread Library
 
 This is a simple cooperative multitasking thread library implemented in C without using external threading libraries such as pthreads. It uses setjmp/longjmp for context switching.
 
