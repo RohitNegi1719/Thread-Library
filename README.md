@@ -4,12 +4,19 @@ This is a simple cooperative multitasking thread library implemented in C withou
 
 ## Features
 
-- Create threads
-- Delete threads
-- Run threads
-- Suspend and resume threads
-- Sleep threads
-- Show the status of threads
+- **Create Threads:** Create cooperative threads using `create_thread`.
+- **Delete Threads:** Terminate and delete threads using `delete_thread`.
+- **Run Threads:** Start the execution of a thread with `run_thread`.
+- **Suspend and Resume Threads:** Temporarily halt and resume thread execution with `suspend_thread` and `resume_thread`.
+- **Sleep Threads:** Pause the execution of a thread for a specified duration using `sleep_thread`.
+- **Show Thread Status:** Check and display the status of a thread with `show_status`.
+
+## Code Overview
+
+- **`ThreadStatus` Enumeration:** Defines different states a thread can be in.
+- **`ThreadControlBlock` Structure:** Contains the thread's execution context, stack, and status.
+- **`threads` Array:** Array to store multiple thread control blocks.
+- **`current_thread` Variable:** Tracks the ID of the currently executing thread.
 
 ## Usage
 
@@ -28,23 +35,13 @@ This is a simple cooperative multitasking thread library implemented in C withou
      ```
 
 3. **Example:**
-   - The provided `main` function demonstrates the usage of the thread library.
-
-4. **Functionality:**
-   - Threads are created using `create_thread`.
-   - Threads are scheduled and switched using `scheduler`.
-   - Threads can be run, suspended, resumed, or put to sleep using various functions.
-   - The status of threads can be shown using `show_status`.
-   - Threads are deleted using `delete_thread`.
+   - The provided `main` function in `cooperative_threads.c` demonstrates the usage of the thread library.
 
 ## Limitations
 
-- This library is a simple implementation for educational purposes and hence lacks the features and performance of more robust threading libraries like pthreads.
+- It lacks the features and performance optimizations of advanced threading libraries.
 
+## Notes
 
+- Threads are scheduled using a timer signal (`SIGALRM`) for context switching.
 
-- The library uses a timer signal (`SIGALRM`) for context switching between threads.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
